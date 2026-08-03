@@ -1,9 +1,19 @@
+import GreetingWidget from "../components/dashboard/GreetingWidget";
+
 export default function Dashboard() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-white flex items-center justify-center">
-      <h1 className="text-6xl font-bold">
-        Dashboard
-      </h1>
+    <main className="mx-auto min-h-screen max-w-7xl px-6 py-8">
+
+      {/* Dashboard Grid */}
+      <section className="grid gap-6 md:grid-cols-12">
+
+        {/* Greeting Widget */}
+        <div className="md:col-span-12">
+            <GreetingWidget/>
+        </div>
+
+      </section>
+
     </main>
   );
 }
