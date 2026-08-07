@@ -1,26 +1,54 @@
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Avatar from "./Avatar";
 
 export default function LandingHero() {
   const navigate = useNavigate();
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-center bg-black px-6 text-white">
-      <h1 className="text-center text-6xl font-bold tracking-tight md:text-8xl">
-        THABANG
-        <br />
-        KGATLHANYE
-      </h1>
+    <section className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-16 px-6 pt-10 lg:flex-row lg:justify-between">
 
-      <p className="mt-6 text-center text-lg text-zinc-400 md:text-xl">
-        Data Scientist × Front-End Developer
-      </p>
+      {/* Left */}
+      <div className="max-w-2xl">
 
-      <button
-        onClick={() => navigate("/dashboard")}
-        className="mt-12 rounded-full border border-zinc-700 px-8 py-4 transition hover:border-white hover:bg-white hover:text-black"
-      >
-        Enter Workspace
-      </button>
+        <div className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm text-zinc-600 shadow-sm">
+          <span className="h-2 w-2 rounded-full bg-emerald-500" />
+          Available for opportunities
+        </div>
+
+        <h1 className="mt-8 text-6xl font-black leading-[0.9] tracking-tight text-zinc-950 sm:text-7xl lg:text-8xl">
+          THABANG
+          <br />
+          KGATLHANYE
+        </h1>
+
+        <h2 className="mt-8 text-2xl font-light text-zinc-700">
+          Creative Technologist
+        </h2>
+
+        <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-500">
+          Building digital products where data science,
+          frontend engineering and creative thinking
+          intersect.
+        </p>
+
+        <button
+          onClick={() => navigate("/dashboard")}
+          className="group mt-12 flex items-center gap-3 rounded-full bg-black px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105"
+        >
+          Enter Workspace
+
+          <ArrowRight
+            size={18}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </button>
+
+      </div>
+
+      {/* Right */}
+      <Avatar />
+
     </section>
   );
 }
