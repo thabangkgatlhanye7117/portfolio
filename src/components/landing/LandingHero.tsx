@@ -16,17 +16,17 @@ export default function LandingHero() {
           Available for opportunities
         </div>
 
-        <h1 className="mt-8 text-6xl font-black leading-[0.9] tracking-tight text-zinc-950 sm:text-7xl lg:text-8xl">
+        <h1 className="mt-8 text-4xl font-black leading-[0.9] tracking-tight text-zinc-950 sm:text-7xl lg:text-8xl">
           THABANG
           <br />
           KGATLHANYE
         </h1>
 
-        <h2 className="mt-8 text-2xl font-light text-zinc-700">
+        <h2 className="mt-8 text-xl font-light text-zinc-700">
           Creative Technologist
         </h2>
 
-        <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-500">
+        <p className="mt-6 max-w-xl text-m leading-8 text-zinc-500">
           Building digital products where data science,
           frontend engineering and creative thinking
           intersect.

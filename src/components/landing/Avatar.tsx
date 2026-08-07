@@ -5,7 +5,7 @@ export default function Avatar() {
     <div className="relative flex items-center justify-center">
 
       {/* Glow */}
-      <div className="absolute h-80 w-80 rounded-full bg-zinc-200 blur-3xl" />
+      <div className="absolute h-60 w-80 rounded-full bg-zinc-200 blur-3xl" />
 
       {/* Avatar */}
       <img
