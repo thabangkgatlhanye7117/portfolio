@@ -13,7 +13,7 @@ export default function MobileMenu({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-black">
+    <div className="fixed inset-0 z-50 flex flex-col bg-black text-white">
       <div className="flex items-center justify-between p-6">
         <h2 className="text-xl font-bold">THABANG</h2>
 

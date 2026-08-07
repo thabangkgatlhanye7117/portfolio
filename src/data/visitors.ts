@@ -1,0 +1,42 @@
+export const visitors = [
+  {
+    id: "za",
+    country: "South Africa",
+    continent: "Africa",
+    visitors: 124,
+    percentage: 58,
+    active: true,
+  },
+  {
+    id: "us",
+    country: "United States",
+    continent: "North America",
+    visitors: 32,
+    percentage: 15,
+    active: false,
+  },
+  {
+    id: "uk",
+    country: "United Kingdom",
+    continent: "Europe",
+    visitors: 21,
+    percentage: 10,
+    active: false,
+  },
+  {
+    id: "de",
+    country: "Germany",
+    continent: "Europe",
+    visitors: 14,
+    percentage: 7,
+    active: false,
+  },
+  {
+    id: "au",
+    country: "Australia",
+    continent: "Oceania",
+    visitors: 10,
+    percentage: 5,
+    active: false,
+  },
+];

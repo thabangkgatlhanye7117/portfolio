@@ -1,3 +1,5 @@
+import Widget from "./Widget";
+
 export default function GreetingWidget() {
   const now = new Date();
 
@@ -23,31 +25,21 @@ export default function GreetingWidget() {
   });
 
   return (
-    <section className="rounded-[32px] bg-zinc-900 p-10 text-white">
-
-      <div className="flex items-start justify-between">
+    <Widget
+      title={`${greeting}, Stranger.`}
+      subtitle="Workspace"
+      
+    >
+      <div className="flex flex-col gap-10 md:flex-row md:justify-between">
 
         <div>
-
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
-            Workspace
-          </p>
-
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight">
-            {greeting},
-            <br />
-            Visitor.
-          </h1>
-
-          <p className="mt-6 max-w-xl text-lg text-zinc-400">
+          <p className="max-w-xl text-lg text-zinc-400">
             Welcome to my workspace where data,
-            design and engineering come together.
+            engineering and design meet.
           </p>
-
         </div>
 
         <div className="text-right">
-
           <p className="text-5xl font-light">
             {time}
           </p>
@@ -56,20 +48,16 @@ export default function GreetingWidget() {
             {date}
           </p>
 
-          <div className="mt-8 flex items-center justify-end gap-2">
+          <div className="mt-6 flex justify-end gap-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
 
-            <div className="h-2 w-2 rounded-full bg-emerald-400" />
-
-            <span className="text-sm text-zinc-400">
+            <span className="text-zinc-400">
               Workspace Online
             </span>
-
           </div>
-
         </div>
 
       </div>
-
-    </section>
+    </Widget>
   );
 }
