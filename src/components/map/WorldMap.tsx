@@ -85,7 +85,7 @@ export default function WorldMap() {
 
         </div>
          {/* Map */}
-        <div className="flex h-80 flex-1 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950 p-4">
+        <div className="relative flex h-[420px] w-full items-center justify-center overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950 p-6">
 
           <Continents activeContinent={activeContinent} />
 

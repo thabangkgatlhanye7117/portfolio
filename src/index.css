@@ -11,3 +11,20 @@ body {
   font-family: "Space Grotesk", sans-serif;
   overflow-x: hidden;
 }
+
+* {
+  cursor: none;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(59, 130, 246, 0.04),
+      transparent 50%
+    ),
+    #fafafa;
+}

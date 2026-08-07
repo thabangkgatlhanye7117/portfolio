@@ -4,72 +4,66 @@ type Props = {
   activeContinent: string;
 };
 
+const pins = {
+  Africa: { left: "55%", top: "73%" },
+  Europe: { left: "49%", top: "31%" },
+  Asia: { left: "69%", top: "37%" },
+  "North America": { left: "20%", top: "30%" },
+  "South America": { left: "29%", top: "66%" },
+  Oceania: { left: "85%", top: "72%" },
+};
+
 export default function Continents({
   activeContinent,
 }: Props) {
-  const fill = (continent: string) =>
-    activeContinent === continent
-      ? "#ffffff"
-      : "#3f3f46";
-
   return (
-    <svg
-      viewBox="0 0 900 500"
-      className="h-full w-full"
-    >
-      <motion.ellipse
-        cx="170"
-        cy="130"
-        rx="90"
-        ry="60"
-        fill={fill("North America")}
-        animate={{ scale: activeContinent === "North America" ? 1.05 : 1 }}
+    <div className="relative h-full w-full">
+
+      <img
+        src="/world.svg"
+        alt="World Map"
+        className="absolute inset-0 h-full w-full object-contain opacity-90"
       />
 
-      <motion.ellipse
-        cx="250"
-        cy="320"
-        rx="45"
-        ry="80"
-        fill={fill("South America")}
-        animate={{ scale: activeContinent === "South America" ? 1.05 : 1 }}
-      />
+      {Object.entries(pins).map(([continent, pin]) => {
+        const active =
+          activeContinent === continent;
 
-      <motion.ellipse
-        cx="430"
-        cy="120"
-        rx="55"
-        ry="35"
-        fill={fill("Europe")}
-        animate={{ scale: activeContinent === "Europe" ? 1.05 : 1 }}
-      />
+        return (
+          <motion.div
+            key={continent}
+            className="absolute"
+            style={{
+              left: pin.left,
+              top: pin.top,
+            }}
+            animate={{
+              scale: active
+                ? [1, 1.8, 1]
+                : 1,
 
-      <motion.ellipse
-        cx="470"
-        cy="260"
-        rx="65"
-        ry="90"
-        fill={fill("Africa")}
-        animate={{ scale: activeContinent === "Africa" ? 1.05 : 1 }}
-      />
+              opacity: active
+                ? 1
+                : 0.3,
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: active
+                ? Infinity
+                : 0,
+            }}
+          >
+            <div
+              className={`h-3 w-3 rounded-full ${
+                active
+                  ? "bg-cyan-400 shadow-[0_0_25px_#22d3ee]"
+                  : "bg-zinc-500"
+              }`}
 
-      <motion.ellipse
-        cx="650"
-        cy="180"
-        rx="140"
-        ry="80"
-        fill={fill("Asia")}
-        animate={{ scale: activeContinent === "Asia" ? 1.05 : 1 }}
-      />
-
-      <motion.ellipse
-        cx="730"
-        cy="360"
-        rx="55"
-        ry="35"
-        fill={fill("Oceania")}
-        animate={{ scale: activeContinent === "Oceania" ? 1.05 : 1 }}
-      />
-    </svg>
+            />
+          </motion.div>
+        );
+      })}
+    </div>
   );
 }
