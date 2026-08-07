@@ -1,13 +1,28 @@
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Avatar from "./Avatar";
 
 export default function LandingHero() {
   const navigate = useNavigate();
+  const [entering, setEntering] = useState(false);
+
+  const handleEnter = () => {
+    setEntering(true);
+
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 900);
+  };
 
   return (
-    <section className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-16 px-6 pt-10 lg:flex-row lg:justify-between">
-
+    <section
+      className={`mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-16 px-6 transition-all duration-700 lg:flex-row lg:justify-between ${
+        entering
+          ? "scale-95 opacity-0 blur-sm"
+          : "scale-100 opacity-100"
+      }`}
+    >
       {/* Left */}
       <div className="max-w-2xl">
 
@@ -26,15 +41,19 @@ export default function LandingHero() {
           Creative Technologist
         </h2>
 
-        <p className="mt-6 max-w-xl text-m leading-8 text-zinc-500">
+        <p className="mt-6 max-w-xl leading-8 text-zinc-500">
           Building digital products where data science,
           frontend engineering and creative thinking
           intersect.
         </p>
 
         <button
-          onClick={() => navigate("/dashboard")}
-          className="group mt-12 flex items-center gap-3 rounded-full bg-black px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105"
+          onClick={handleEnter}
+          className={`group mt-12 flex items-center gap-3 rounded-full bg-black px-8 py-4 font-medium text-white transition-all duration-500 ${
+            entering
+              ? "scale-90 opacity-0"
+              : "hover:scale-105"
+          }`}
         >
           Enter Workspace
 
@@ -47,7 +66,7 @@ export default function LandingHero() {
       </div>
 
       {/* Right */}
-      <Avatar />
+      <Avatar entering={entering} />
 
     </section>
   );
