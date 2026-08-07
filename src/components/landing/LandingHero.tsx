@@ -24,24 +24,24 @@ export default function LandingHero() {
       }`}
     >
       {/* Left */}
-      <div className="max-w-2xl">
+      <div className="max-w-2xl ">
 
-        <div className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm text-zinc-600 shadow-sm">
+        <div className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2 mt-8  text-sm text-zinc-600 shadow-sm">
           <span className="h-2 w-2 rounded-full bg-emerald-500" />
           Available for opportunities
         </div>
 
-        <h1 className="mt-8 text-4xl font-black leading-[0.9] tracking-tight text-zinc-950 sm:text-7xl lg:text-8xl">
+        <h1 className="mt-8 text-2xl font-black leading-[0.9] tracking-tight text-zinc-950 sm:text-7xl lg:text-8xl">
           THABANG
           <br />
           KGATLHANYE
         </h1>
 
-        <h2 className="mt-8 text-xl font-light text-zinc-700">
+        <h2 className="mt-8 text-l font-light text-zinc-700">
           Creative Technologist
         </h2>
 
-        <p className="mt-6 max-w-xl leading-8 text-zinc-500">
+        <p className="mt-6 max-w-xl leading-8 text-l text-zinc-500">
           Building digital products where data science,
           frontend engineering and creative thinking
           intersect.
@@ -49,7 +49,7 @@ export default function LandingHero() {
 
         <button
           onClick={handleEnter}
-          className={`group mt-12 flex items-center gap-3 rounded-full bg-black px-8 py-4 font-medium text-white transition-all duration-500 ${
+          className={`group mt-8 flex items-center gap-3 rounded-full bg-black px-8 py-4 font-medium text-white transition-all duration-500 ${
             entering
               ? "scale-90 opacity-0"
               : "hover:scale-105"

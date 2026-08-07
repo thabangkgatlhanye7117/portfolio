@@ -13,12 +13,12 @@ export default function Avatar({ entering }: AvatarProps) {
           : "translate-y-0 scale-100 opacity-100"
       }`}
     >
-      <div className="absolute h-80 w-80 rounded-full bg-zinc-200 blur-3xl" />
+      <div className="absolute h-60 w-60 rounded-full bg-zinc-200 blur-3xl" />
 
       <img
         src="/avatar.png"
         alt="Thabang Kgatlhanye"
-        className="relative z-10 w-72 object-contain drop-shadow-2xl md:w-96"
+        className="relative z-10 w-62 object-contain drop-shadow-2xl md:w-96"
       />
 
       <FloatingTech />
