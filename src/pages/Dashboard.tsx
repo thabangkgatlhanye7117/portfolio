@@ -13,7 +13,7 @@ export default function Dashboard() {
   const [activeContinent, setActiveContinent] = useState("Africa");
 
   return (
-    <div className="py-10 px-10">
+    <div className="lg:py-10 px-10">
       {/* Greeting */}
       <GreetingWidget/>
       <motion.section
