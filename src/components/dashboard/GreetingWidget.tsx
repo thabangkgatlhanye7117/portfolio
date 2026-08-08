@@ -26,7 +26,7 @@ export default function GreetingWidget() {
 
   return (
     <Widget
-      title={`${greeting}, Stranger.`}
+      title={`${greeting}.`}
       subtitle="Workspace"
       
     >
@@ -34,8 +34,8 @@ export default function GreetingWidget() {
 
         <div>
           <p className="max-w-xl text-lg text-zinc-400">
-            Welcome to my workspace where data,
-            engineering and design meet.
+            Welcome to my workspace.<br/> Explore the projects, technologies
+             and ideas shaping my journey as a Data Product Engineer.
           </p>
         </div>
 

@@ -3,8 +3,8 @@ const tech = [
   { label: "Python", top: "30%", right: "-12%" },
   { label: "SQL", bottom: "25%", left: "-12%" },
   { label: "AWS", bottom: "8%", right: "-8%" },
-  { label: "AI", top: "60%", right: "-18%" },
-  { label: "CRM", bottom: "-2%", left: "20%" },
+  { label: "AI/ML", top: "60%", right: "-18%" },
+  { label: "Typescript", bottom: "-2%", left: "20%" },
 ];
 
 export default function FloatingTech() {

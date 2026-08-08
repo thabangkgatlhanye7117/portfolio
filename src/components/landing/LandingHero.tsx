@@ -38,13 +38,12 @@ export default function LandingHero() {
         </h1>
 
         <h2 className="mt-8 text-l font-light text-zinc-700">
-          Creative Technologist
+          Data Product Engineer
         </h2>
 
         <p className="mt-6 max-w-xl leading-8 text-l text-zinc-500">
-          Building digital products where data science,
-          frontend engineering and creative thinking
-          intersect.
+          Building intelligent digital products through data,
+          software engineering and user-centered design.
         </p>
 
         <button
