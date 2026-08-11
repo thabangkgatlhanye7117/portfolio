@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Topbar from "../components/dashboard/Topbar";
+import Footer from "../components/dashboard/Footer";
 
 export default function DashboardLayout() {
   return (
@@ -11,6 +12,8 @@ export default function DashboardLayout() {
       <main className="pt-20">
         <Outlet />
       </main>
+
+      <Footer/>
 
     </div> 
   );
