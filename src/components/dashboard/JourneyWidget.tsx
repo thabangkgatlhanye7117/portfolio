@@ -39,7 +39,7 @@ export default function JourneyWidget({
         {/* Timeline line */}
         <div className="absolute left-[7px] top-4 bottom-4 w-px bg-zinc-800" />
 
-        {journey.map((item, index) => (
+        {journey.map((item,) => (
           <motion.div
             key={item.year}
             onHoverStart={() => setActiveTrack(item.track)}
