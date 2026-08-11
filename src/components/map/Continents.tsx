@@ -17,53 +17,51 @@ export default function Continents({
   activeContinent,
 }: Props) {
   return (
-    <div className="relative h-full w-full">
+    <div className="relative flex h-full w-full items-center justify-center">
 
-      <img
-        src="/world.svg"
-        alt="World Map"
-        className="absolute inset-0 h-full w-full object-contain opacity-90"
-      />
+      {/* Map + Pins share the same coordinate system */}
+      <div className="relative aspect-[2/1] w-full max-w-full">
 
-      {Object.entries(pins).map(([continent, pin]) => {
-        const active =
-          activeContinent === continent;
+        {/* World Map */}
+        <img
+          src="/world.svg"
+          alt="World Map"
+          className="absolute inset-0 h-full w-full object-contain opacity-90"
+        />
 
-        return (
-          <motion.div
-            key={continent}
-            className="absolute"
-            style={{
-              left: pin.left,
-              top: pin.top,
-            }}
-            animate={{
-              scale: active
-                ? [1, 1.8, 1]
-                : 1,
+        {/* Pins */}
+        {Object.entries(pins).map(([continent, pin]) => {
+          const active = activeContinent === continent;
 
-              opacity: active
-                ? 1
-                : 0.3,
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: active
-                ? Infinity
-                : 0,
-            }}
-          >
-            <div
-              className={`h-3 w-3 rounded-full ${
-                active
-                  ? "bg-cyan-400 shadow-[0_0_25px_#22d3ee]"
-                  : "bg-zinc-500"
-              }`}
+          return (
+            <motion.div
+              key={continent}
+              className="absolute"
+              style={{
+                left: pin.left,
+                top: pin.top,
+              }}
+              animate={{
+                scale: active ? [1, 1.8, 1] : 1,
+                opacity: active ? 1 : 0.3,
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: active ? Infinity : 0,
+              }}
+            >
+              <div
+                className={`h-3 w-3 rounded-full ${
+                  active
+                    ? "bg-cyan-400 shadow-[0_0_25px_#22d3ee]"
+                    : "bg-zinc-500"
+                }`}
+              />
+            </motion.div>
+          );
+        })}
 
-            />
-          </motion.div>
-        );
-      })}
+      </div>
     </div>
   );
 }

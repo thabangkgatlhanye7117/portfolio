@@ -1,43 +1,11 @@
 import Widget from "./Widget";
+import { skills } from "../../data/skills";
 
 type Props = {
   activeTrack: string;
 };
 
-const skills = [
-  {
-    name: "Python",
-    tracks: ["data"],
-  },
-  {
-    name: "SQL",
-    tracks: ["data"],
-  },
-  {
-    name: "React",
-    tracks: ["frontend"],
-  },
-  {
-    name: "TypeScript",
-    tracks: ["frontend"],
-  },
-  {
-    name: "Power BI",
-    tracks: ["data"],
-  },
-  {
-    name: "AWS",
-    tracks: ["data"],
-  },
-  {
-    name: "Docker",
-    tracks: ["data"],
-  },
-  {
-    name: "Git",
-    tracks: ["frontend", "marketing"],
-  },
-];
+
 
 export default function SkillsWidget({ activeTrack }: Props) {
   return (

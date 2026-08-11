@@ -19,4 +19,9 @@ export const navigation = [
     path: "/contact",
     id: 4,
   },
+    {
+    label: "Insights",
+    path: "/insights",
+    id: 5,
+  },
 ];

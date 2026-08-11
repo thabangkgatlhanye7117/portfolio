@@ -1,7 +1,13 @@
+import { motion } from "framer-motion";
+
 export default function ProjectsHero() {
   return (
-    <section className="rounded-[32px] bg-zinc-900 p-8 text-white">
-
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="rounded-[32px] bg-zinc-900 p-8 text-white"
+    >
       <p className="mb-3 uppercase tracking-[0.3em] text-zinc-500">
         Portfolio
       </p>
@@ -15,7 +21,6 @@ export default function ProjectsHero() {
         CRM experiences and intelligent systems
         built through design, development and data.
       </p>
-
-    </section>
+    </motion.section>
   );
 }

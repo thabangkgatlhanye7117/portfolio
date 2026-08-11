@@ -8,10 +8,12 @@ import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 
 import DashboardLayout from "../layouts/DashboardLayout";
-
+import Insights from "../pages/Insights";
+import ScrollToTop from "../components/ScrollToTop";
 export default function Router() {
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <Routes>
             {/* Landing */}
             <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ export default function Router() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/experience" element={<Experience />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/insights" element={<Insights />} />
             </Route>
 
             {/* 404 */}

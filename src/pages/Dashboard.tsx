@@ -34,7 +34,7 @@ export default function Dashboard() {
         </div>
 
         {/* World Map */}
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-8 pt-12 pb-12">
           <WorldMap
             activeContinent={activeContinent}
             setActiveContinent={setActiveContinent}
@@ -42,7 +42,7 @@ export default function Dashboard() {
         </div>
 
         {/* Analytics */}
-        <div className="lg:pt-18 lg:col-span-4">
+        <div className="lg:pt-30 lg:col-span-4">
           <AnalyticsWidget
             activeContinent={activeContinent}
           />

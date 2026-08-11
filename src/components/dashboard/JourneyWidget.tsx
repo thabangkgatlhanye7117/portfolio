@@ -13,75 +13,76 @@ export default function JourneyWidget({
     {
       year: "2024",
       title: "Frontend Development",
-      hours: 720,
+      description: "Building digital experiences and interfaces.",
+      technologies: "React · TypeScript · WordPress",
       track: "frontend",
     },
     {
       year: "2025",
       title: "Digital Marketing",
-      hours: 940,
+      description: "Connecting products, people and growth.",
+      technologies: "Ecommerce · SEO · CRM",
       track: "marketing",
     },
     {
       year: "2026",
       title: "Data Science & AI",
-      hours: 1180,
+      description: "Turning data into insights and intelligent systems.",
+      technologies: "Python · SQL · AI",
       track: "data",
     },
   ];
 
   return (
     <Widget title="Journey" subtitle="Timeline">
-      <div className="space-y-6">
-        {journey.map((item) => (
+      <div className="relative space-y-2">
+        {/* Timeline line */}
+        <div className="absolute left-[7px] top-4 bottom-4 w-px bg-zinc-800" />
+
+        {journey.map((item, index) => (
           <motion.div
             key={item.year}
             onHoverStart={() => setActiveTrack(item.track)}
             onHoverEnd={() => setActiveTrack("")}
-            whileHover={{
-              y: -4,
-            }}
-            transition={{
-              duration: 0.2,
-            }}
-            className="cursor-pointer rounded-xl p-3"
+            whileHover={{ x: 4 }}
+            transition={{ duration: 0.2 }}
+            className="relative cursor-pointer rounded-2xl p-3 pl-8"
           >
-            <div className="flex justify-between">
-              <span className="text-zinc-400">
-                {item.year}
-              </span>
+            {/* Timeline dot */}
+            <motion.div
+              className="absolute left-0 top-5 h-4 w-4 rounded-full border-2 border-zinc-900 bg-zinc-700"
+              whileHover={{
+                scale: 1.35,
+                backgroundColor: "#3b82f6",
+                boxShadow: "0 0 18px rgba(59,130,246,0.6)",
+              }}
+              transition={{ duration: 0.2 }}
+            />
 
-              <span className="text-zinc-500">
-                {item.hours} hrs
-              </span>
-            </div>
+            {/* Year */}
+            <p className="text-sm font-medium text-zinc-500">
+              {item.year}
+            </p>
 
-            <motion.p
-              className="mt-2 text-zinc-400"
+            {/* Title */}
+            <motion.h3
+              className="mt-1 text-lg font-medium text-zinc-300"
               whileHover={{
                 color: "#ffffff",
               }}
             >
               {item.title}
-            </motion.p>
+            </motion.h3>
 
-            <div className="mt-3 h-2 overflow-hidden rounded-full bg-zinc-800">
-              <motion.div
-                className="h-full rounded-full"
-                style={{
-                  width: `${item.hours / 12}%`,
-                }}
-                whileHover={{
-                  backgroundColor: "#3b82f6",
-                }}
-                initial={{
-                  backgroundColor: "#ffffff",
-                }}
-                transition={{
-                  duration: 0.25,
-                }}
-              />
-            </div>
+            {/* Description */}
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-500">
+              {item.description}
+            </p>
+
+            {/* Technologies / focus */}
+            <p className="mt-3 text-xs tracking-wide text-zinc-600">
+              {item.technologies}
+            </p>
           </motion.div>
         ))}
       </div>

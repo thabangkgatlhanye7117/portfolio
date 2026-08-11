@@ -1,64 +1,136 @@
-export const projects = [
+export type ProjectCategory =
+  | "Data Products"
+  | "Data Science & AI"
+  | "Research & Insights"
+  | "Ecommerce"
+  | "Engineering";
+
+export type ProjectStatus =
+  | "Completed"
+  | "Building"
+  | "Research"
+  | "Planning";
+
+export type Project = {
+  id: string;
+  title: string;
+  category: ProjectCategory;
+  status: ProjectStatus;
+  progress: number;
+  description: string;
+  technologies: string[];
+};
+
+export const projects: Project[] = [
   {
-    id: 1,
-    title: "HAUS",
-    category: "Frontend",
-    status: "Completed",
-    progress: 100,
+    id: "customer-intelligence",
+    title: "Customer Intelligence",
+    category: "Data Products",
+    status: "Planning",
+    progress: 0,
     description:
-      "A Gen Z ecommerce platform for affordable second-hand home essentials.",
+      "A data product exploring customer behaviour, segmentation and the translation of behavioural data into actionable insights.",
     technologies: [
+      "Python",
+      "SQL",
+      "Statistics",
       "React",
+    ],
+  },
+
+  {
+    id: "digital-payments",
+    title: "Digital Payments Analysis",
+    category: "Data Science & AI",
+    status: "Planning",
+    progress: 0,
+    description:
+      "An analysis of digital payment adoption, consumer behaviour and the transition from cash to digital commerce.",
+    technologies: [
+      "Python",
+      "SQL",
+      "Power BI",
+      "Data Analysis",
+    ],
+  },
+
+  {
+    id: "ecommerce-intelligence",
+    title: "Ecommerce Intelligence",
+    category: "Data Products",
+    status: "Planning",
+    progress: 0,
+    description:
+      "An ecommerce analytics product exploring sales, customer behaviour, product performance and business decision-making.",
+    technologies: [
+      "Python",
+      "SQL",
+      "Analytics",
+      "React",
+    ],
+  },
+
+  {
+    id: "research-insights",
+    title: "Insights",
+    category: "Research & Insights",
+    status: "Building",
+    progress: 10,
+    description:
+      "A personal research platform for collecting datasets, analysing patterns and turning findings into structured insights.",
+    technologies: [
+      "Python",
+      "SQL",
+      "Data Analysis",
+      "React",
+    ],
+  },
+
+  {
+    id: "data-visualisation",
+    title: "Data Visualisation Lab",
+    category: "Data Science & AI",
+    status: "Planning",
+    progress: 0,
+    description:
+      "A collection of data visualisation experiments focused on communicating complex datasets through clear interactive experiences.",
+    technologies: [
+      "Python",
+      "Pandas",
+      "Power BI",
+      "React",
+    ],
+  },
+
+  {
+    id: "haus",
+    title: "HAUS",
+    category: "Ecommerce",
+    status: "Planning",
+    progress: 0,
+    description:
+      "An ecommerce concept exploring how data, merchandising and digital experiences can improve the online shopping journey.",
+    technologies: [
       "WordPress",
       "WooCommerce",
-      "Tailwind",
+      "Ecommerce",
+      "Analytics",
     ],
   },
 
   {
-    id: 2,
-    title: "Cloud Bulla",
-    category: "Data Science",
-    status: "Building",
-    progress: 70,
+    id: "frontend-lab",
+    title: "Frontend Lab",
+    category: "Engineering",
+    status: "Planning",
+    progress: 0,
     description:
-      "Analytics dashboard powered by React and Supabase.",
+      "A collection of frontend experiments exploring interfaces, interactions, animation and data-driven experiences.",
     technologies: [
       "React",
-      "Supabase",
-      "SQL",
-      "Charts",
-    ],
-  },
-
-  {
-    id: 3,
-    title: "Brand South Africa",
-    category: "CRM",
-    status: "Research",
-    progress: 85,
-    description:
-      "Insight-to-impact CRM strategy for South African fashion entrepreneurs.",
-    technologies: [
-      "Research",
-      "CRM",
-      "Strategy",
-      "Data",
-    ],
-  },
-
-  {
-    id: 4,
-    title: "Eskort CRM",
-    category: "Marketing",
-    status: "Completed",
-    progress: 100,
-    description:
-      "Township-first CRM strategy connecting vendors and consumers.",
-    technologies: [
-      "CRM",
-      "Research",
-      "Journey Mapping",
+      "TypeScript",
+      "Tailwind",
+      "Framer Motion",
     ],
   },
 ];

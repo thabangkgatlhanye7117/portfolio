@@ -2,16 +2,16 @@ export const experience = [
   {
     year: "2024",
     title: "Frontend Development",
-    description: "React, JavaScript, UI Development",
+    description: "Building interfaces, ecommerce experiences and interactive web applications.",
   },
   {
     year: "2025",
     title: "Digital Marketing",
-    description: "SEO, CRM, Strategy",
+    description: "Exploring consumer behaviour, research, CRM and digital growth.",
   },
   {
     year: "2026",
     title: "Data Science & AI",
-    description: "Python, SQL, Machine Learning",
+    description: "Developing skills in data analysis, machine learning and data product engineering.",
   },
 ];

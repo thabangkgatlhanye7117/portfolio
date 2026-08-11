@@ -1,15 +1,15 @@
 const socials = [
   {
     label: "GitHub",
-    url: "#",
+    url: "https://github.com/thabangkgatlhanye7117",
   },
   {
     label: "LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/in/thabang-kgatlhanye-200889211/",
   },
   {
     label: "Email",
-    url: "mailto:you@example.com",
+    url: "mailto:thabangkgatlhanye7117@gmail.com",
   },
 ];
 

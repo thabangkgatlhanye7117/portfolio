@@ -10,9 +10,8 @@ export default function ContactHero() {
       </h1>
 
       <p className="mt-6 max-w-2xl text-zinc-400">
-        Whether it's data, design, frontend engineering or
-        creative technology, I'm always open to meaningful
-        collaborations and interesting challenges.
+     I’m interested in meaningful problems — from data and digital products to frontend engineering and ecommerce.
+      If there’s something worth building, analysing or improving, let’s talk.
       </p>
     </section>
   );

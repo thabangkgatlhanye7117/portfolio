@@ -22,7 +22,7 @@ export default function AvailabilityCard() {
 
         <div className="flex justify-between">
           <span className="text-zinc-400">Response</span>
-          <span>Within 24 Hours</span>
+          <span>Within 48 Hours</span>
         </div>
 
       </div>

@@ -14,8 +14,17 @@ export default function Cursor() {
   });
 
   const [trail, setTrail] = useState<Trail[]>([]);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    const isTouch =
+      window.matchMedia("(pointer: coarse)").matches;
+
+    setIsTouchDevice(isTouch);
+
+    // Don't create cursor listeners on touch devices
+    if (isTouch) return;
+
     const moveCursor = (event: MouseEvent) => {
       const newPosition = {
         x: event.clientX,
@@ -28,7 +37,7 @@ export default function Cursor() {
         ...prev.slice(-10),
         {
           ...newPosition,
-          id: Date.now(),
+          id: Date.now() + Math.random(),
         },
       ]);
     };
@@ -40,6 +49,11 @@ export default function Cursor() {
     };
   }, []);
 
+  // Remove custom cursor completely on mobile/touch devices
+  if (isTouchDevice) {
+    return null;
+  }
+
   return (
     <>
       {/* Cursor Trail */}
@@ -48,8 +62,8 @@ export default function Cursor() {
           key={point.id}
           className="
             fixed
-            w-2
             h-2
+            w-2
             rounded-full
             bg-blue-400
             pointer-events-none
@@ -77,8 +91,8 @@ export default function Cursor() {
       <motion.div
         className="
           fixed
-          w-5
           h-5
+          w-5
           rounded-full
           bg-blue-500
           pointer-events-none

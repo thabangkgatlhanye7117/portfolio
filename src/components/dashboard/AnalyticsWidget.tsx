@@ -1,60 +1,10 @@
 import Widget from "./Widget";
+import { researchData } from "../../data/researchData";
 
 type Props = {
   activeContinent: string;
 };
 
-const researchData: Record<
-  string,
-  {
-    insights: number;
-    datasets: number;
-    topics: string[];
-    latest: string;
-  }
-> = {
-  Africa: {
-    insights: 12,
-    datasets: 8,
-    topics: ["Payments", "Retail", "AI"],
-    latest: "Digital Payments in South Africa",
-  },
-
-  Europe: {
-    insights: 5,
-    datasets: 4,
-    topics: ["AI", "Cloud", "Open Source"],
-    latest: "Open Source AI Trends",
-  },
-
-  Asia: {
-    insights: 4,
-    datasets: 3,
-    topics: ["AI", "Technology", "Ecommerce"],
-    latest: "AI Adoption in Asia",
-  },
-
-  "North America": {
-    insights: 8,
-    datasets: 5,
-    topics: ["Cloud", "AI", "Frontend"],
-    latest: "The Growth of AI Engineering",
-  },
-
-  "South America": {
-    insights: 3,
-    datasets: 2,
-    topics: ["Ecommerce", "Payments"],
-    latest: "Ecommerce Growth",
-  },
-
-  Oceania: {
-    insights: 2,
-    datasets: 2,
-    topics: ["Cloud", "Data"],
-    latest: "Cloud Infrastructure Trends",
-  },
-};
 
 export default function AnalyticsWidget({
   activeContinent,
